@@ -1,5 +1,6 @@
 from discord.ext import commands
 from tortoise import Tortoise
+import os
 
 bot = commands.Bot(command_prefix="!")
 bot.remove_command("help")
@@ -13,4 +14,5 @@ async def on_ready():
     print("Ready")
 
 
-bot.run("ODE3NDEzNzQ2NTAyNDAyMTE5.YEJJ3w.x9LeiaXpNdOzL467iQwhwa05ZAA")
+access_token = os.environ['BOT_TOKEN']   
+bot.run(access_token)
